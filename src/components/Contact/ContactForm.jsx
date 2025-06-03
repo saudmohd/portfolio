@@ -1,6 +1,12 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { FiSend, FiUser, FiMail, FiMessageSquare } from 'react-icons/fi';
+import emailjs from 'emailjs-com';
+
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -38,16 +44,29 @@ const ContactForm = () => {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
         throw new Error('Please enter a valid email address');
       }
+        try {
+            await emailjs.send(
+              SERVICE_ID,
+              TEMPLATE_ID,
+              {
+                name: formData.name,
+                email: formData.email,
+                message: formData.message
+              },
+              PUBLIC_KEY
+        );
 
-      // Here you would typically make an API call
-      // await axios.post('/api/contact', formData);
-      
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitSuccess(false), 3000);
+            setIsSubmitting(false);
+            setSubmitSuccess(true);
+            setFormData({ name: '', email: '', message: '' });
+            
+            // Reset success message after 3 seconds
+            setTimeout(() => setSubmitSuccess(false), 3000);
+          }
+          catch (err) {
+          setIsSubmitting(false);
+          setError(`Failed to send message. Please try again later. ${err}`);
+        }
     } catch (err) {
       setIsSubmitting(false);
       setError(err.message);

@@ -8,7 +8,7 @@ const Contact = () => {
       icon: <FiMail className="w-6 h-6 text-primary dark:text-blue-400" />,
       title: "Email",
       value: "saudmuhammad.zbi786@gmail.com",
-      href: "saudmuhammad.zbi786@gmail.com"
+      href: "mailto:saudmuhammad.zbi786@gmail.com"
     },
     {
       icon: <FiMapPin className="w-6 h-6 text-primary dark:text-blue-400" />,

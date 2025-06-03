@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { FiDownload, FiMail } from 'react-icons/fi';
+import profileImage from '../../assets/saud_img.jpg'; 
 
+const cvPdf = '/assets/saud_cv.pdf';
 const About = () => {
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -31,7 +33,7 @@ const About = () => {
           <motion.p 
             variants={variants}
             transition={{ delay: 0.3 }}
-            className="text-lg text-primary dark:text-gray-300"
+            className="text-lg text-gray-600 dark:text-gray-300"
           >
             Building robust data pipelines and machine learning solutions to transform raw data into actionable insights.
             Passionate about creating efficient systems that handle data at scale while maintaining clarity and reliability.
@@ -43,15 +45,15 @@ const About = () => {
             className="flex flex-wrap gap-4"
           >
             <a
-              href="/resume.pdf"
-              download
+              href={cvPdf}
+              download="Saud_Muhammad_CV.pdf"
               className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300"
             >
               <FiDownload className="w-5 h-5" />
               Download Resume
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:saudmuhammad.zbi786@gmail.com"
               className="flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
             >
               <FiMail className="w-5 h-5" />
@@ -60,17 +62,20 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Right Column - Image/Illustration */}
+        {/* Right Column - Image */}
         <motion.div
           variants={variants}
           transition={{ delay: 0.5 }}
           className="relative flex justify-center"
         >
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
-            {/* Replace with your image */}
-            <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-2xl">
-              Your Photo
-            </div>
+          <div className="relative w-64 h-64 sm:w-80
+           sm:h-80 rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800 bg-slate-800 shadow-xl">
+
+            <img 
+              src={profileImage} 
+              alt="Saud Muhammad" 
+              className="w-full h-full object-fix rounded-md"
+            />
             <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-blue-100 dark:bg-blue-900/50 -z-10"></div>
             <div className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-purple-100 dark:bg-purple-900/50 -z-10"></div>
           </div>
