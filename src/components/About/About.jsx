@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FiDownload, FiMail } from 'react-icons/fi';
 import profileImage from '../../assets/saud_img.jpg'; 
 
-const cvPdf = '/assets/saud_cv.pdf';
+const cvPdf = '/saud_cv.pdf';
 const About = () => {
   const variants = {
     hidden: { opacity: 0, y: 20 },
