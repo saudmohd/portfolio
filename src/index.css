@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: "JetBrains Mono", monospace;
+}
+:root {
+  --text-primary: #000;
+}
+
+.dark {
+  --text-primary: #fff;
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
