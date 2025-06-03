@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import { FaRegDotCircle } from 'react-icons/fa';
-
+import "./ProjectCard.css"
 const ProjectCard = ({ project }) => {
   return (
     <motion.div
@@ -12,13 +12,16 @@ const ProjectCard = ({ project }) => {
       className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700"
     >
       {/* Project Image */}
-      <div className="h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white text-xl">
+      <div className="project-title h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white text-xl">
         {project.title}
       </div>
       
       {/* Project Content */}
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white">{project.title}</h3>
+        <h3 className="text-2xl font-bold mb-2 text-gray-800 dark:text-white text-center sm:text-center md:text-center lg:text-left xl:text-left">
+                      {project.title}
+        </h3>
+
         <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
         
         {/* Features List */}

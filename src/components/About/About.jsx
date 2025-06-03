@@ -33,7 +33,7 @@ const About = () => {
           <motion.p 
             variants={variants}
             transition={{ delay: 0.3 }}
-            className="text-lg text-gray-600 dark:text-gray-300"
+            className="text-lg text-primary dark:text-gray-300"
           >
             Building robust data pipelines and machine learning solutions to transform raw data into actionable insights.
             Passionate about creating efficient systems that handle data at scale while maintaining clarity and reliability.

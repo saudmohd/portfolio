@@ -1,0 +1,9 @@
+.project-title {
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  .project-title {
+    text-align: left;
+  }
+}
