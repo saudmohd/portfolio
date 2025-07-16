@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiDownload, FiMail } from 'react-icons/fi';
-import profileImage from '../../assets/saud_img.jpg'; 
+import profileImage from '../../assets/profile.jpeg'; 
 
 const cvPdf = '/saud_cv.pdf';
 const About = () => {
